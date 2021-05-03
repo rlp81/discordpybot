@@ -1,0 +1,20 @@
+import discord
+from discord.ext import commands
+
+Client = commands.Bot(command_prefix="!", help_command=None)
+
+@Client.command(name="Help")
+async def Help(context):
+    embed = discord.Embed(title="Help", description="Help command!")
+    embed.add_field(name="ping", value="Shows the discord bot's latency!", inline=False)
+    embed.add_field(name="Hello", value="The bot says hello back!", inline=False)
+    await context.send(embed=embed)
+    
+    @Client.command(name="ping")
+async def ping(context):
+    await context.send(f"My ping is {round(Client.latency*1000)}")
+
+@Client.event
+async def on_ready():
+    print("Bot is online!")
+Client.run("token")
