@@ -17,4 +17,4 @@ async def ping(context):
 @Client.event
 async def on_ready():
     print("Bot is online!")
-Client.run("token")
+Client.run("ODM4NDUxMjA1NjIwNDk4NDMy.YI7SiQ.ApqCLytQ02Pb0LjxIReIgEjSPk4")
